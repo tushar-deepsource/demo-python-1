@@ -35,7 +35,8 @@ class RandomNumberGenerator:
         """Get a random number between min and max."""
         if min_max is None:
             min_max = [1, 10]
-        assert all(isinstance(i, int) for i in min_max)
+        if not all(isinstance(i, int) for i in min_max):
+            raise AssertionError
         return random.randint(*min_max)
 
 
