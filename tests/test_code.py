@@ -8,8 +8,5 @@ def test_random_number_generator():
 
 
 class Tests(unittest.TestCase):
-    def my_test(self, arg1, arg2):
-        self.assertEquals(arg1, arg2)
+    pass
 
-    def my_test2(self, arg1, arg2):
-        self.assertEquals(arg1, arg2)
