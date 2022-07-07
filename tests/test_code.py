@@ -9,4 +9,3 @@ def test_random_number_generator():
 
 class Tests(unittest.TestCase):
     pass
-
