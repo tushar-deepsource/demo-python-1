@@ -22,10 +22,9 @@ class BaseNumberGenerator:
     def smethod():
         """static method-to-be"""
 
+    @classmethod
     def cmethod(cls, something):
         """class method-to-be"""
-
-    cmethod = classmethod(cmethod)
 
 
 class RandomNumberGenerator:
