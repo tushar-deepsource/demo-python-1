@@ -129,7 +129,7 @@ def chained_comparison():
 
 def wrong_callable():
     number = ImaginaryNumber()
-    if hasattr(number, "__call__"):
+    if callable(number):
         return number()
 
 
