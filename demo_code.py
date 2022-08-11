@@ -87,7 +87,6 @@ def get_users():
 
 def tar_something():
     context = ssl._create_stdlib_context()
-    context.check_hostname = True
     os.tempnam("dir1")
     subprocess.Popen("/bin/chown *", shell=True)
     o.system("/bin/tar xvzf *")
