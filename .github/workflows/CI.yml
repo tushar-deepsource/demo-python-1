@@ -29,15 +29,23 @@ jobs:
 
     - name: Run tests
       run: |
-        pip install pytest-cov django
-        pytest --cov=./ --cov-report=xml
+        pip install pytest django
+        coverage run -m pytest tests/test_code.py
+        coverage xml -o coverage.xml
+        coverage erase
+        coverage run -m pytest tests/test_code2.py
+        coverage xml -o coverage2.xml
+        coverage erase
 
-    - name: Report test coverage to DeepSource dev (python, go, js, php)
+    - name: Report test coverage to DeepSource dev (python, go)
       run: |
         curl https://deepsource.io/cli | sh
         export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_DEV
+        md5 coverage.xml coverage2.xml go_coverage.xml
         # create python artifact
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
+        # create another python artifact
+        ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage2.xml
         # existing python artifact with same file so update only
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
         # create go artifact
