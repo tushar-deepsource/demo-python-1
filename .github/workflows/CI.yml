@@ -39,7 +39,6 @@ jobs:
       run: |
         curl https://deepsource.io/cli | sh
         export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_DEV
-        md5 coverage.xml coverage2.xml go_coverage.xml
         # create python artifact
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
         # create another python artifact
