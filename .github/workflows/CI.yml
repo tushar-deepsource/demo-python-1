@@ -12,8 +12,6 @@ jobs:
 
     env:
         DEEPSOURCE_DSN_DEV: ${{ secrets.DEEPSOURCE_DSN_DEV }}
-        DEEPSOURCE_DSN_ENTERPRISE_DEV: ${{ secrets.DEEPSOURCE_DSN_ENTERPRISE_DEV }}
-        DEEPSOURCE_DSN_PROD: ${{ secrets.DEEPSOURCE_DSN_PROD }}
 
     steps:
     - name: Checkout code
@@ -29,7 +27,7 @@ jobs:
 
     - name: Run tests
       run: |
-        pip install pytest django
+        pip install pytest-cov django
         coverage run -m pytest tests/test_code.py
         coverage xml -o coverage.xml
         coverage erase
