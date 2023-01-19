@@ -40,4 +40,4 @@ jobs:
         curl https://deepsource.io/cli | sh
         export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_DEV
         # create python artifact
-        ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
+        ./bin/deepsource report --analyzer test-coverage --key python --value-file ./python-coverage.xml
