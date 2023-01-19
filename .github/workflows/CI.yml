@@ -41,10 +41,3 @@ jobs:
         export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_DEV
         # create python artifact
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
-        # create another python artifact
-        ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage2.xml
-        # existing python artifact with same file so update only
-        ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
-        # create go artifact
-        ./bin/deepsource report --analyzer test-coverage --key go --value-file ./go_coverage.out
-    
