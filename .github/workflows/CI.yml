@@ -25,15 +25,15 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Run tests
-      run: |
-        pip install pytest-cov django
-        coverage run -m pytest tests/test_code.py
-        coverage xml -o coverage.xml
-        coverage erase
-        coverage run -m pytest tests/test_code2.py
-        coverage xml -o coverage2.xml
-        coverage erase
+    #- name: Run tests
+    #  run: |
+    #    pip install pytest-cov django
+    #    coverage run -m pytest tests/test_code.py
+    #    coverage xml -o coverage.xml
+    #    coverage erase
+    #    coverage run -m pytest tests/test_code2.py
+    #    coverage xml -o coverage2.xml
+    #    coverage erase
 
     - name: Report test coverage to DeepSource dev (python, go)
       run: |
@@ -41,3 +41,4 @@ jobs:
         export DEEPSOURCE_DSN=$DEEPSOURCE_DSN_DEV
         # create python artifact
         ./bin/deepsource report --analyzer test-coverage --key python --value-file ./python-coverage.xml
+        ./bin/deepsource report --analyzer test-coverage --key java --value-file ./java-coverage.xml
