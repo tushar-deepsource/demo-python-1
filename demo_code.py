@@ -117,6 +117,9 @@ def chained_comparison():
     c = 3
     return a < b and b < c
 
+    foo = 5
+    print(foo)
+
 
 def wrong_callable():
     number = ImaginaryNumber()
