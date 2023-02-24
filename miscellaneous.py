@@ -4,7 +4,6 @@ import os
 
 class Orange:
     """Represents the fruit orange."""
-
     orange = "#FFA500"
     # Other class implementations
 
