@@ -7,6 +7,9 @@ name = "secrets"
 name = "test-coverage"
 
 [[analyzers]]
+name = "transformer"
+
+[[analyzers]]
 name = "python"
 
   [analyzers.meta]
