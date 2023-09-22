@@ -1,5 +1,4 @@
-import sqlite3
-import requests
+import sqlite3, requests
 
 
 class ResidentsDb:
