@@ -1,5 +1,7 @@
 version = 1
 
+exclude_patterns = ["**/*_code.py"]
+
 [[analyzers]]
 name = "secrets"
 
