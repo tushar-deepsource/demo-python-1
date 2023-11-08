@@ -33,7 +33,6 @@ jobs:
           coverage erase
           coverage run -m pytest tests/test_code2.py
           coverage xml -o coverage2.xml
-          coverage erase
 
       - name: Report test coverage to DeepSource dev (python, go)
         run: |
